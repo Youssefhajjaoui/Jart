@@ -1,15 +1,13 @@
 package geometrical_shapes;
 
 import java.awt.Color;
-import java.util.Random;
 
 public class Line implements Drawable {
     private final Point p1, p2;
     private Color color;
 
     public Line(Point p1, Point p2) {
-        Random rand = new Random();
-        this.color = color.white;
+        this.color = Color.WHITE;
         this.p1 = p1;
         this.p2 = p2;
     }

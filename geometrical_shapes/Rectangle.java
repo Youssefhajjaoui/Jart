@@ -1,7 +1,6 @@
 package geometrical_shapes;
 
 import java.awt.Color;
-import java.util.Random;
 
 public class Rectangle implements Drawable {
     private final Point p1, p2;
@@ -10,8 +9,7 @@ public class Rectangle implements Drawable {
     public Rectangle(Point p1, Point p2) {
         this.p1 = p1;
         this.p2 = p2;
-        Random rand = new Random();
-        this.color = Color.white;
+        this.color = Color.WHITE;
     }
 
     public void draw(Displayable displayable) {

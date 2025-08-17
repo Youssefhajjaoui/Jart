@@ -1,4 +1,3 @@
-import java.awt.Color;
 import geometrical_shapes.*;
 
 public class Main {
