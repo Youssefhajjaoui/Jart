@@ -1,5 +1,3 @@
-import application.*;
-
 import java.awt.Color;
 import geometrical_shapes.*;
 

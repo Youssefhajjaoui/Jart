@@ -1,6 +1,6 @@
+package geometrical_shapes;
+
 import java.awt.Color;
-import application.Displayable;
-import application.Drawable;
 
 public class Rectangle implements Drawable {
     private final Point p1, p2;

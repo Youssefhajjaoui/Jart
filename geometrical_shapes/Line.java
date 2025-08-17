@@ -1,7 +1,7 @@
+package geometrical_shapes;
+
 import java.awt.Color;
 import java.util.Random;
-import application.Displayable;
-import application.Drawable;
 
 public class Line implements Drawable {
     private final Point p1, p2;

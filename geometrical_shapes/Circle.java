@@ -1,7 +1,6 @@
+package geometrical_shapes;
 import java.awt.Color;
 import java.util.Random;
-import application.Displayable;
-import application.Drawable;
 
 public class Circle implements Drawable {
     private final Point center;
@@ -19,6 +18,11 @@ public class Circle implements Drawable {
         int y = rand.nextInt(maxHeight);
         int radius = rand.nextInt(Math.min(maxWidth, maxHeight) / 4) + 10; // Random radius, min 10
         return new Circle(new Point(x, y), radius);
+    }
+
+    @Override
+    public void draw(Displayable displayable) {
+        // circle drawing logic...
     }
 
     @Override

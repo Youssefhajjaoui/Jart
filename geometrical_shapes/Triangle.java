@@ -1,6 +1,6 @@
+package geometrical_shapes;
+
 import java.awt.Color;
-import application.Displayable;
-import application.Drawable;
 
 public class Triangle implements Drawable {
     private final Point a, b, c;
