@@ -1,10 +1,25 @@
-public class Point{
-       public int x;
-       public int y;
-	
+import java.util.Random;
 
-       public static Point new(int x, int y){
-        this.y = y;
-	this.x = x;
+public class Point {
+       private final int x, y;
+
+       public Point(int x, int y) {
+              this.x = x;
+              this.y = y;
+       }
+
+       public static Point random(int maxWidth, int maxHeight) {
+              Random rand = new Random();
+              int x = rand.nextInt(maxWidth);
+              int y = rand.nextInt(maxHeight);
+              return new Point(x, y);
+       }
+
+       public int getX() {
+              return x;
+       }
+
+       public int getY() {
+              return y;
        }
 }

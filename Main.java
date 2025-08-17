@@ -1,12 +1,7 @@
-interface Displayable {
-    void display(int x, int y, Color color);
-    void save(String string);
-}
+import application.*;
 
-interface Drawable {
-    void draw(Displayable displayable);
-    Color getColor();
-}
+import java.awt.Color;
+import geometrical_shapes.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,11 +10,20 @@ public class Main {
         rectangle.draw(image);
         Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900), new Point(100, 900));
         triangle.draw(image);
-
-        for (int i = 0; i < 50; i++) {
-            Circle circle = Circle.random(image.getWidth(), image.getHeight());
-            circle.draw(image);
+        for (int i = 0; i < 20; i++) {
+            Line line = Line.random(image.getWidth(), image.getHeight());
+            line.draw(image);
         }
-        image.save(image.png);
+
+        for (int i = 0; i < 20; i++) {
+            Point p = Point.random(image.getWidth(), image.getHeight());
+            image.display(p.getX(), p.getY(), java.awt.Color.MAGENTA);
+        }
+
+        // for (int i = 0; i < 50; i++) {
+        // Circle circle = Circle.random(image.getWidth(), image.getHeight());
+        // circle.draw(image);
+        // }
+        image.save("image.png");
     }
 }
