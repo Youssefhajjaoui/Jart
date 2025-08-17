@@ -16,7 +16,7 @@ public class Image implements Displayable {
         // Fill the background with white
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                bufferedImage.setRGB(x, y, Color.WHITE.getRGB());
+                bufferedImage.setRGB(x, y, Color.BLACK.getRGB());
             }
         }
     }

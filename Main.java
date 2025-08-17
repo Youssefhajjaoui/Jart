@@ -15,12 +15,16 @@ public class Main {
 
         for (int i = 0; i < 20; i++) {
             Point p = Point.random(image.getWidth(), image.getHeight());
-            image.display(p.getX(), p.getY(), java.awt.Color.MAGENTA);
+            image.display(p.getX(), p.getY(), java.awt.Color.WHITE);
         }
 
+        for (int i = 0; i < 50; i++) {
+        Circle circle = Circle.random(image.getWidth(), image.getHeight());
+        circle.draw(image);
+        }
         // for (int i = 0; i < 50; i++) {
-        // Circle circle = Circle.random(image.getWidth(), image.getHeight());
-        // circle.draw(image);
+        //     Circle circle = Circle.random(image.getWidth(), image.getHeight());
+        //     circle.draw(image);
         // }
         image.save("image.png");
     }

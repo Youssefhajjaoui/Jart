@@ -1,13 +1,18 @@
 package geometrical_shapes;
 
 import java.awt.Color;
+import java.util.Random;
 
 public class Rectangle implements Drawable {
     private final Point p1, p2;
-    private final Color color = Color.BLUE;
+    private Color color;
 
     public Rectangle(Point p1, Point p2) {
-        this.p1 = p1; this.p2 = p2;
+        this.p1 = p1;
+        this.p2 = p2;
+        Random rand = new Random();
+        this.color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+
     }
 
     public void draw(Displayable displayable) {
@@ -16,11 +21,27 @@ public class Rectangle implements Drawable {
         Point topRight = new Point(bottomRight.getX(), topLeft.getY());
         Point bottomLeft = new Point(topLeft.getX(), bottomRight.getY());
 
-        new Line(topLeft, topRight).draw(displayable);
-        new Line(topRight, bottomRight).draw(displayable);
-        new Line(bottomRight, bottomLeft).draw(displayable);
-        new Line(bottomLeft, topLeft).draw(displayable);
+        Line top = new Line(topLeft, topRight);
+        Line right = new Line(topRight, bottomRight);
+        Line bottom = new Line(bottomRight, bottomLeft);
+        Line left = new Line(bottomLeft, topLeft);
+
+        top.setColor(color);
+        right.setColor(color);
+        bottom.setColor(color);
+        left.setColor(color);
+
+        top.draw(displayable);
+        right.draw(displayable);
+        bottom.draw(displayable);
+        left.draw(displayable);
     }
 
-    public Color getColor() { return color; }
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }

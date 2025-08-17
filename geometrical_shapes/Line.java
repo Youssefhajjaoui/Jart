@@ -5,12 +5,13 @@ import java.util.Random;
 
 public class Line implements Drawable {
     private final Point p1, p2;
-    private final Color color;
+    private Color color;
 
     public Line(Point p1, Point p2) {
+        Random rand = new Random();
+        this.color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
         this.p1 = p1;
         this.p2 = p2;
-        this.color = Color.BLACK;
     }
 
     public static Line random(int maxWidth, int maxHeight) {
@@ -43,6 +44,10 @@ public class Line implements Drawable {
                 y0 += sy;
             }
         }
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     public Color getColor() {

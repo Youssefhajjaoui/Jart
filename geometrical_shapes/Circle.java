@@ -1,13 +1,16 @@
 package geometrical_shapes;
+
 import java.awt.Color;
 import java.util.Random;
 
 public class Circle implements Drawable {
     private final Point center;
     private final int radius;
-    private final Color color = Color.GREEN;
+    private final Color color;
 
     public Circle(Point center, int radius) {
+        Random rand = new Random();
+        this.color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
         this.center = center;
         this.radius = radius;
     }
@@ -22,7 +25,29 @@ public class Circle implements Drawable {
 
     @Override
     public void draw(Displayable displayable) {
-        // circle drawing logic...
+        int x = radius;
+        int y = 0;
+        int err = 0;
+
+        while (x >= y) {
+            displayable.display(center.getX() + x, center.getY() + y, getColor());
+            displayable.display(center.getX() + y, center.getY() + x, getColor());
+            displayable.display(center.getX() - y, center.getY() + x, getColor());
+            displayable.display(center.getX() - x, center.getY() + y, getColor());
+            displayable.display(center.getX() - x, center.getY() - y, getColor());
+            displayable.display(center.getX() - y, center.getY() - x, getColor());
+            displayable.display(center.getX() + y, center.getY() - x, getColor());
+            displayable.display(center.getX() + x, center.getY() - y, getColor());
+
+            if (err <= 0) {
+                y += 1;
+                err += 2 * y + 1;
+            }
+            if (err > 0) {
+                x -= 1;
+                err -= 2 * x + 1;
+            }
+        }
     }
 
     @Override

@@ -1,20 +1,36 @@
 package geometrical_shapes;
 
 import java.awt.Color;
+import java.util.Random;
 
 public class Triangle implements Drawable {
     private final Point a, b, c;
-    private final Color color = Color.RED;
+    private Color color;
 
     public Triangle(Point a, Point b, Point c) {
-        this.a = a; this.b = b; this.c = c;
+        Random rand = new Random();
+        this.color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     public void draw(Displayable displayable) {
-        new Line(a, b).draw(displayable);
-        new Line(b, c).draw(displayable);
-        new Line(c, a).draw(displayable);
+
+        Line ab = new Line(a, b);
+        Line bc = new Line(b, c);
+        Line ca = new Line(c, a);
+
+        ab.setColor(color);
+        bc.setColor(color);
+        ca.setColor(color);
+
+        ab.draw(displayable);
+        bc.draw(displayable);
+        ca.draw(displayable);
     }
 
-    public Color getColor() { return color; }
+    public Color getColor() {
+        return color;
+    }
 }
