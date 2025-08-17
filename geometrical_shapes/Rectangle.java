@@ -11,8 +11,7 @@ public class Rectangle implements Drawable {
         this.p1 = p1;
         this.p2 = p2;
         Random rand = new Random();
-        this.color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
-
+        this.color = Color.white;
     }
 
     public void draw(Displayable displayable) {

@@ -9,7 +9,7 @@ public class Triangle implements Drawable {
 
     public Triangle(Point a, Point b, Point c) {
         Random rand = new Random();
-        this.color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+        this.color = color.white;
         this.a = a;
         this.b = b;
         this.c = c;
